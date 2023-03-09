@@ -1,0 +1,24 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<div class="form">
+    <form action="{{url_for('create_students')}}" method="post">
+        <h3>Öğrenci Oluştur</h3>
+        <div class="form-group">
+            <label for="name">İsim</label>
+            <input type="text" name="name" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="age">Yaş</label>
+            <input type="int" name="age" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="registration_no">Öğrenci Numarası</label>
+            <input type="text" name="registration_no" class="form-control">
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Öğrenci Ekle" class="btn btn-primary">
+        </div>
+    </form>
+</div>
+{% endblock content %}

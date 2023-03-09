@@ -1,0 +1,27 @@
+{%extends 'base.html'%}
+
+{% block content %}
+    <body class="container">
+
+        <table class="table">
+            <thead>
+                <th>ID</th>
+                <th>İsim</th>
+                <th>Yaş</th>
+                <th>Öğrenci numarası</th>
+            </thead>
+            <tbody>
+                {% for student in students %}
+                        <tr>
+                            <td>{{student.id}}</td>
+                            <td>{{student.name}}</td>
+                            <td>{{student.age}}</td>
+                            <td>{{student.registration_no}}</td>
+                            <td><a href="{{url_for('update_a_student',student_id=student.id)}}" class="btn btn-info">Güncelle</a></td>
+                            <td><a href="{{url_for('delete_student',student_id=student.id)}}" class="btn btn-danger">Sil</a></td>
+                        </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+{% endblock content %}
